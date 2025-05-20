@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pedro & Hannah</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      background: black;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    .container {
+      text-align: center;
+      padding: 20px;
+      z-index: 1;
+      position: relative;
+      color: #fff;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #fff5f7;
+      margin-bottom: 0.5em;
+    }
+
+    .spotify-widget {
+      margin-top: 20px;
+    }
+
+    .spotify-widget iframe {
+      border-radius: 12px;
+    }
+
+    .spotify-frame {
+      position: relative;
+      width: 250px;
+      height: 250px;
+      margin: 0 auto 20px;
+    }
+
+    .spotify-frame .foto {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      position: relative;
+      z-index: 1;
+    }
+
+    .spotify-frame .moldura {
+      position: absolute;
+      top: -31px;
+      left: -29px;
+      width: 300px;
+      height: 300px;
+      object-fit: contain;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .subtitle {
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #fff;
+      margin-top: 20px;
+    }
+
+    .date-counter {
+      font-size: 0.9em;
+      font-weight: bold;
+      color: #ff0000;
+      margin-top: 5px;
+      margin-bottom: 0.5em;
+    }
+
+    .divider {
+      width: 60%;
+      margin: 20px auto;
+      border-top: 2px solid #ff0000;
+    }
+
+    p {
+      font-size: 1.1em;
+      color: #fff;
+      max-width: 700px;
+      margin: 10px auto;
+    }
+
+    .hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+      font-size: 1.3em;
+    }
+
+    .heart {
+      position: absolute;
+      top: -50px;
+      animation: fall 9s linear infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(120vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    .rose {
+      margin-top: 30px;
+      width: 200px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .love-text {
+      font-size: 6em; /* Aumentando o tamanho da fonte */
+      font-weight: bold;
+      color: red; /* Mudando para vermelho */
+      margin-top: 30px;
+      text-align: center; /* Centralizando o "EU TE AMO" */
+    }
+
+  </style>
+</head>
+<body>
+  <div class="hearts"></div>
+
+  <div class="container">
+    <!-- Adicionando o Widget de Áudio do Spotify -->
+    <div class="spotify-widget">
+      <iframe 
+        src="https://open.spotify.com/embed/track/52EYWdjiulHaehpexuowyh" 
+        width="300" 
+        height="80" 
+        frameborder="0" 
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+        loading="lazy">
+      </iframe>
+    </div>
+
+    <h1>Pedro & Hannah</h1>
+
+    <div class="spotify-frame">
+      <img class="foto" src="https://i.imgur.com/uf58XI7.jpeg" alt="Foto da Hannah" />
+      <img class="moldura" src="https://i.imgur.com/FS7vEbo.png" alt="Moldura de círculo" />
+    </div>
+
+    <p class="subtitle">Eu te amo no meu mundo, no seu e no que a gente tá construindo juntos.</p>
+    <p class="date-counter" id="counter"></p>
+
+    <div class="divider"></div>
+
+    <p>Amor, só queria te lembrar o quanto você é especial pra mim. Cada detalhe seu me faz admirar ainda mais quem você é. Seu sorriso ilumina meu mundo, como se fosse uma estrela feita só pra mim, e a sua voz é a melodia que nunca quero deixar de ouvir. Quero que saiba que sempre estarei aqui por você, em qualquer momento.</p>
+  </div>
+
+  <!-- Música local tocando automaticamente -->
+  <audio autoplay loop>
+    <source src="musica.mp3" type="audio/mpeg">
+    Seu navegador não suporta áudio HTML5.
+  </audio>
+
+  <!-- Container do vídeo -->
+<video 
+  id="loveVideo"
+  src="euteamoamor.mp4" 
+  loop 
+  playsinline 
+  style="display: block; margin: 30px auto; width: 180px; border-radius: 12px;">
+</video>
+
+<!-- Botão para ativar o som -->
+<button 
+  onclick="playWithSound()" 
+  style="display: block; margin: 10px auto; background-color: red; color: white; border: none; padding: 10px 20px; border-radius: 10px; font-weight: bold; cursor: pointer;">
+  Ouça o video 💖
+</button>
+
+<script>
+  function playWithSound() {
+    const video = document.getElementById('loveVideo');
+    video.muted = false;
+    video.play();
+  }
+</script>
+
+  <!-- Novo texto -->
+  <p>Eu preciso que você saiba o quanto você significa para mim. Cada momento ao seu lado é uma bênção, e eu sou imensamente grato por tudo que você traz para a minha vida. Seu sorriso ilumina os meus dias de uma forma que eu nunca imaginei ser possível, e cada gesto seu me faz perceber o quanto sou afortunado por ter você. Eu te amo de uma forma tão profunda e verdadeira, e mais do que palavras podem expressar, eu quero que você saiba que estarei sempre aqui por você.</p>
+
+  <p>Quero ser o seu porto seguro, a pessoa em quem você pode confiar plenamente, sabendo que em qualquer momento, em qualquer situação, eu estarei ao seu lado. Quero ser a pessoa que você pode recorrer quando precisar de um ombro amigo, de alguém para te apoiar ou até mesmo para escutar os seus desabafos. Vou estar sempre aqui para te dar suporte, para te incentivar, para te dar forças quando você sentir que precisa. Nada nesse mundo é mais importante para mim do que te ver feliz e em paz.</p>
+
+  <p>Eu não quero que a gente se afaste, jamais. Quero que, a cada desafio que apareça, saibamos enfrentá-lo juntos, com amor e confiança. Quero lutar por nós dois, por tudo o que sonhamos e por tudo o que ainda vamos conquistar. Com você, eu sei que posso ser o melhor de mim mesmo, e quero fazer de tudo para ser a pessoa que você sempre precisou, aquela que vai fazer o impossível para te fazer feliz e te dar o mundo.</p>
+
+  <p>Você merece todo o amor, carinho e felicidade, e eu vou fazer o meu melhor todos os dias para ser o homem que vai te dar tudo isso. Porque, ao seu lado, sinto que sou capaz de conquistar qualquer coisa. Eu te amo, e não tem como descrever esse amor que tenho por você. Você nunca estará sozinha enquanto eu existir. Estou aqui, para hoje, para amanhã e para sempre. ❤️</p>
+
+  <!-- "EU TE AMO" em linhas separadas e vermelho -->
+  <div class="love-text">
+    <p>EU</p>
+    <p>TE</p>
+    <p>AMO</p>
+  </div>
+
+  <script>
+    const startDate = new Date("2024-10-21T00:00:00");
+    const counterElement = document.getElementById("counter");
+
+    function updateCounter() {
+      const now = new Date();
+      const diff = now - startDate;
+
+      const totalSeconds = Math.floor(diff / 1000);
+      const months = Math.floor(totalSeconds / (30.44 * 24 * 60 * 60));
+      const days = Math.floor((totalSeconds % (30.44 * 24 * 60 * 60)) / (24 * 60 * 60));
+      const hours = Math.floor((totalSeconds % (24 * 60 * 60)) / (60 * 60));
+      const minutes = Math.floor((totalSeconds % (60 * 60)) / 60);
+      const seconds = totalSeconds % 60;
+
+      counterElement.textContent = `${months} meses, ${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos`;
+    }
+
+    setInterval(updateCounter, 1000);
+    updateCounter();
+
+    const heartsContainer = document.querySelector('.hearts');
+    heartsContainer.innerHTML = '';
+    for (let i = 0; i < 12; i++) {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.textContent = '❤️';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDelay = Math.random() * 10 + 's';
+      heartsContainer.appendChild(heart);
+    }
+  </script>
+</body>
+</html>
